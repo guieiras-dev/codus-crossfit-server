@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { GraphQLServer } from 'graphql-yoga';
 import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools';
 // import { GraphQLDateTime } from 'graphql-iso-date';
