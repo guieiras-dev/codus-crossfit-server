@@ -5,11 +5,12 @@
 - [x] Setup Typescript
 - [x] Setup GraphQL-Yoga
 - [x] Define Schema
+- [ ] Expose Stubbed Schema
+  - [ ] Expose Challenge type
+    - [ ] Create `DateTime` scalars
+  - [ ] Expose WIP Challenge type
 - [ ] Setup ORM
-- [ ] Add Basic Types
-  - [ ] Query Type
-  - [ ] Mutation Type
-- [ ] Add Resolvers
+- [ ] Add Real Resolvers
   - [ ] Challenges
   - [ ] Challenge By Id
   - [ ] WIP Challenges
