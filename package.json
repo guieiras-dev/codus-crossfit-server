@@ -4,15 +4,17 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "npm run build && node dist/index.js",
     "build": "tsc"
   },
   "dependencies": {
     "apollo-server": "^2.4.2",
-    "graphql-yoga": "^1.17.4"
+    "graphql-yoga": "^1.17.4",
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.19",
+    "@types/lodash": "^4.14.121",
     "typescript": "^3.3.3"
   }
 }
