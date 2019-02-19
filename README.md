@@ -45,3 +45,9 @@
 4. Starting Postgraphile
 
     `docker run -p 5000:5000 --network crossfit graphile/postgraphile --connection postgres://postgres:password@crossfit_db:5432/crossfit --schema public --watch`
+
+You can export Postgraphile GraphQL schema using following command:
+
+```
+docker run -p 5000:5000 -v "PATH_TO_HOST:/host" --network crossfit graphile/postgraphile --connection postgres://postgres:password@crossfit_db:5432/crossfit --schema public --export-schema-graphql="/host/schema.gql"
+```
