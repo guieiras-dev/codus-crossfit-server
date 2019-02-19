@@ -1,0 +1,47 @@
+# Codus Crossfit Server
+
+## Roadmap
+
+- [x] Setup Typescript
+- [x] Setup Apollo-Yoga
+- [x] Define Schema
+- [ ] Setup ORM
+- [ ] Add Basic Types
+  - [ ] Query Type
+  - [ ] Mutation Type
+- [ ] Add Resolvers
+  - [ ] Challenges
+  - [ ] Challenge By Id
+  - [ ] WIP Challenges
+  - [ ] WIP Challenges By Id
+  - [ ] Challenge by WIP Challenge
+- [ ] Add Mutations
+  - [ ] Add Challenges
+  - [ ] Add WIP Challenges
+  - [ ] Move WIP Challenges
+  - [ ] Delete Challenges
+  - [ ] Delete WIP Challenges
+- [ ] Good Stuff
+  - [ ] Authentication
+  - [ ] Authorization
+  - [ ] Subscriptions
+
+---
+
+## Simple GraphQL Server with Postgraphile and Docker
+
+1. Creating Network
+
+    `docker network create crossfit`
+
+2. Creating Database
+
+    `docker run --name crossfit_db -p 5432:5432 -e POSTGRES_PASSWORD=password --network=crossfit postgres`
+
+3. Seeding Database
+
+    Use [Schema](./schema.sql) file to create tables and relations.
+
+4. Starting Postgraphile
+
+    `docker run -p 5000:5000 --network crossfit graphile/postgraphile --connection postgres://postgres:password@crossfit_db:5432/crossfit --schema public --watch`
