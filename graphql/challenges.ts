@@ -1,7 +1,3 @@
-import {
-  GraphQLDateTime
-} from 'graphql-iso-date';
-
 const mockChallenges = [
   {
     id: 1, title: "Tittle", description: "Desc",
@@ -11,8 +7,6 @@ const mockChallenges = [
 ]
 
 const typeDefs = `
-scalar DateTime
-
 type Challenge {
   id: ID!
   title: String!
@@ -31,7 +25,6 @@ const resolvers = {
       return mockChallenges;
     },
   },
-  DateTime: GraphQLDateTime,
 };
 
 export { typeDefs, resolvers };
