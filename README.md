@@ -2,14 +2,14 @@
 
 ## Roadmap
 
-- [x] Setup Typescript
-- [x] Setup GraphQL-Yoga
-- [x] Define Schema
+- [X] Setup Typescript
+- [X] Setup GraphQL-Yoga
+- [X] Define Schema
 - [ ] Expose Stubbed Schema
-  - [ ] Expose Challenge type
+  - [X] Expose Challenge type
     - [X] Create `DateTime` scalars
       - [Custom Scalars](https://www.apollographql.com/docs/apollo-server/v2/features/scalars-enums.html)
-  - [ ] Expose WIP Challenge type
+  - [X] Expose WIP Challenge type
 - [ ] Setup ORM
 - [ ] Add Real Resolvers
   - [ ] Challenges
