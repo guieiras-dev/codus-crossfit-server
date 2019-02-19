@@ -1,15 +1,13 @@
 import { GraphQLServer } from 'graphql-yoga';
-import { GraphQLDateTime } from 'graphql-iso-date';
-import { merge } from "lodash";
+import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools';
+// import { GraphQLDateTime } from 'graphql-iso-date';
 
 import {
   typeDefs as Challenges,
-  resolvers as challengeResolvers
 } from "./graphql/challenges";
 
 import {
   typeDefs as WipChallenges,
-  resolvers as wipChallengeResolvers
 } from "./graphql/wip_challenges";
 
 const defaultTypeDefs = `
@@ -20,13 +18,17 @@ type Query {
 }
 `;
 
-const defaultResolvers = {
-  DateTime: GraphQLDateTime,
-};
+// const defaultResolvers = {
+//   DateTime: GraphQLDateTime,
+// };
 
 const typeDefs = [defaultTypeDefs, Challenges, WipChallenges];
 
-const server = new GraphQLServer({
-  typeDefs, resolvers: merge(defaultResolvers, challengeResolvers, wipChallengeResolvers)
+const schema = makeExecutableSchema({ typeDefs })
+addMockFunctionsToSchema({
+  schema,
+  mocks: { DateTime: () => new Date("2019-02-18") }
 });
+
+const server = new GraphQLServer({ schema });
 server.start(() => console.log('Server is running on http://localhost:4000'));

@@ -5,7 +5,7 @@
 - [X] Setup Typescript
 - [X] Setup GraphQL-Yoga
 - [X] Define Schema
-- [ ] Expose Stubbed Schema
+- [X] Expose Stubbed Schema
   - [X] Expose Challenge type
     - [X] Create `DateTime` scalars
       - [Custom Scalars](https://www.apollographql.com/docs/apollo-server/v2/features/scalars-enums.html)

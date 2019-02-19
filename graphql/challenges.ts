@@ -1,11 +1,3 @@
-const mockChallenges = [
-  {
-    id: 1, title: "Tittle", description: "Desc",
-    createdAt: new Date("2019-02-18"),
-    updatedAt: new Date("2019-02-18")
-  }
-]
-
 const typeDefs = `
 type Challenge {
   id: ID!
@@ -22,7 +14,7 @@ extend type Query {
 const resolvers = {
   Query: {
     challenges: (_obj: any, _args: any) => {
-      return mockChallenges;
+      // TODO
     },
   },
 };
