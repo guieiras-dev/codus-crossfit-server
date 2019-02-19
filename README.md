@@ -3,7 +3,7 @@
 ## Roadmap
 
 - [x] Setup Typescript
-- [x] Setup Apollo-Yoga
+- [x] Setup GraphQL-Yoga
 - [x] Define Schema
 - [ ] Setup ORM
 - [ ] Add Basic Types

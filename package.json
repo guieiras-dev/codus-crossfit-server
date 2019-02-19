@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc"
+  },
   "dependencies": {
     "apollo-server": "^2.4.2",
     "graphql-yoga": "^1.17.4"
