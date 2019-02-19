@@ -7,7 +7,8 @@
 - [x] Define Schema
 - [ ] Expose Stubbed Schema
   - [ ] Expose Challenge type
-    - [ ] Create `DateTime` scalars
+    - [X] Create `DateTime` scalars
+      - [Custom Scalars](https://www.apollographql.com/docs/apollo-server/v2/features/scalars-enums.html)
   - [ ] Expose WIP Challenge type
 - [ ] Setup ORM
 - [ ] Add Real Resolvers
