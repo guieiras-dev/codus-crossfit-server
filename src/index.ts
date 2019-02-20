@@ -1,9 +1,10 @@
 import "reflect-metadata";
 import { GraphQLServer } from 'graphql-yoga';
 import { createConnection } from 'typeorm';
-import databaseConfig from './config/database';
 import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools';
-// import { GraphQLDateTime } from 'graphql-iso-date';
+import { GraphQLDateTime } from 'graphql-iso-date';
+import merge from 'lodash/merge';
+import databaseConfig from './config/database';
 
 import {
   typeDefs as Challenges,
@@ -22,22 +23,18 @@ type Query {
 }
 `;
 
-// const defaultResolvers = {
-//   DateTime: GraphQLDateTime,
-// };
+const defaultResolvers = {
+  DateTime: GraphQLDateTime,
+};
 
 const typeDefs = [defaultTypeDefs, Challenges, WipChallenges];
 
 const schema = makeExecutableSchema({
   typeDefs,
-  resolvers: challengeResolvers
+  resolvers: merge(defaultResolvers, challengeResolvers)
 });
 
-addMockFunctionsToSchema({
-  schema,
-  mocks: { DateTime: () => new Date("2019-02-18") },
-  preserveResolvers: true
-});
+addMockFunctionsToSchema({ schema, preserveResolvers: true });
 
 const server = new GraphQLServer({ schema });
 
