@@ -1,3 +1,5 @@
+import Challenge from "../entities/challenge";
+
 const typeDefs = `
 type Challenge {
   id: ID!
@@ -14,7 +16,7 @@ extend type Query {
 const resolvers = {
   Query: {
     challenges: (_obj: any, _args: any) => {
-      // TODO
+      return Challenge.find();
     },
   },
 };
