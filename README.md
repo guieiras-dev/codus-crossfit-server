@@ -11,8 +11,13 @@
       - [Custom Scalars](https://www.apollographql.com/docs/apollo-server/v2/features/scalars-enums.html)
   - [X] Expose WIP Challenge type
 - [ ] Setup ORM
+    - [X] Basic configuration
+    - [X] Challenge Entity
+    - [ ] WIP Challenge Entity
+        - [ ] Status ([Enum](https://github.com/typeorm/typeorm/blob/master/docs/entities.md#enum-column-type))
+    - [ ] [Migrations](https://github.com/typeorm/typeorm/blob/master/docs/migrations.md)
 - [ ] Add Real Resolvers
-  - [ ] Challenges
+  - [X] Challenges
   - [ ] Challenge By Id
   - [ ] WIP Challenges
   - [ ] WIP Challenges By Id
