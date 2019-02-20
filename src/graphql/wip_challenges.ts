@@ -1,8 +1,14 @@
 const typeDefs = `
+enum ChallengeProgress {
+  TODO
+  DOING
+  DONE
+}
+
 type WipChallenge {
   id: ID!
   userEmail: String!
-  status: String!
+  status: ChallengeProgress!
   createdAt: DateTime!
   updatedAt: DateTime!
   challengeId: ID!
