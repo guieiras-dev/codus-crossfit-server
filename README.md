@@ -13,8 +13,7 @@
 - [ ] Setup ORM
     - [X] Basic configuration
     - [X] Challenge Entity
-    - [ ] WIP Challenge Entity
-        - [ ] Status ([Enum](https://github.com/typeorm/typeorm/blob/master/docs/entities.md#enum-column-type))
+    - [X] WIP Challenge Entity
     - [ ] [Migrations](https://github.com/typeorm/typeorm/blob/master/docs/migrations.md)
 - [ ] Add Real Resolvers
   - [X] Challenges
