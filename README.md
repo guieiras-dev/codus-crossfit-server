@@ -18,9 +18,9 @@
 - [ ] Add Real Resolvers
   - [X] Challenges
   - [ ] Challenge By Id
-  - [ ] WIP Challenges
+  - [X] WIP Challenges
   - [ ] WIP Challenges By Id
-  - [ ] Challenge by WIP Challenge
+  - [X] Challenge by WIP Challenge
 - [ ] Add Mutations
   - [ ] Add Challenges
   - [ ] Add WIP Challenges

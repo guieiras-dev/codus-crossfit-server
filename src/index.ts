@@ -13,6 +13,7 @@ import {
 
 import {
   typeDefs as WipChallenges,
+  resolvers as wipChallengeResolvers,
 } from "./graphql/wip_challenges";
 
 const defaultTypeDefs = `
@@ -31,7 +32,7 @@ const typeDefs = [defaultTypeDefs, Challenges, WipChallenges];
 
 const schema = makeExecutableSchema({
   typeDefs,
-  resolvers: merge(defaultResolvers, challengeResolvers)
+  resolvers: merge(defaultResolvers, challengeResolvers, wipChallengeResolvers)
 });
 
 addMockFunctionsToSchema({ schema, preserveResolvers: true });

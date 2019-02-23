@@ -1,3 +1,5 @@
+import WipChallenge from "../entities/wip_challenge";
+
 const typeDefs = `
 enum ChallengeProgress {
   TODO
@@ -21,9 +23,7 @@ extend type Query {
 `;
 const resolvers = {
   Query: {
-    wipChallenges: (_obj: any, _args: any) => {
-      // TODO
-    },
+    wipChallenges: (_obj: any, _args: any) => WipChallenge.find()
   }
 };
 
