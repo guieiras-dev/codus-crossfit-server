@@ -5,7 +5,10 @@
   "license": "MIT",
   "scripts": {
     "start": "npm run build && node dist/index.js",
-    "build": "tsc"
+    "build": "tsc",
+    "db:create": "node dist/db/tasks/create.js",
+    "db:migrate": "node dist/db/tasks/migrate.js",
+    "db:rollback": "node dist/db/tasks/rollback.js"
   },
   "dependencies": {
     "apollo-server": "^2.4.2",
@@ -21,6 +24,7 @@
     "@types/graphql-iso-date": "^3.3.1",
     "@types/lodash": "^4.14.121",
     "@types/node": "^11.9.4",
+    "@types/pg": "^7.4.13",
     "typescript": "^3.3.3"
   }
 }
