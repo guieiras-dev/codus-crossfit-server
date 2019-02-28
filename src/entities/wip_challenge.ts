@@ -13,30 +13,30 @@ import Challenge from "./challenge";
 enum ChallengeStatus {
   TODO = "todo",
   DOING = "doing",
-  DONE = "done"
+  DONE = "done",
 }
 
 @Entity("wip_challenges")
 export default class WipChallenge extends BaseEntity {
   @PrimaryGeneratedColumn()
-  id!: number;
+  public id!: number;
 
   @Column({ name: "user_email" })
-  userEmail!: string;
+  public userEmail!: string;
 
   @Column({ type: "enum", enum: ChallengeStatus })
-  status!: ChallengeStatus;
+  public status!: ChallengeStatus;
 
   @ManyToOne(() => Challenge)
   @JoinColumn({ name: "challenge_id" })
-  challenge!: Promise<Challenge>;
+  public challenge!: Promise<Challenge>;
 
   @Column({ name: "challenge_id" })
-  challengeId!: number;
+  public challengeId!: number;
 
   @CreateDateColumn({ name: "created_at" })
-  createdAt!: Date;
+  public createdAt!: Date;
 
   @UpdateDateColumn({ name: "updated_at" })
-  updatedAt!: Date;
+  public updatedAt!: Date;
 }
