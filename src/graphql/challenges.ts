@@ -12,6 +12,9 @@ type Challenge {
 extend type Query {
   challenges: [Challenge]!
 }
+extend type Mutation {
+  createChallenge(title: String!, description: String!): Challenge
+}
 `;
 const resolvers = {
   Query: {
@@ -19,6 +22,15 @@ const resolvers = {
       return Challenge.find();
     },
   },
+  Mutation: {
+    createChallenge: (_obj: any, { title, description }: { title: string, description: string }) => {
+      const challenge = Challenge.create();
+      challenge.title = title;
+      challenge.description = description;
+
+      return challenge.save();
+    }
+  }
 };
 
 export { typeDefs, resolvers };

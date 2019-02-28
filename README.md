@@ -22,7 +22,7 @@
   - [ ] WIP Challenges By Id
   - [X] Challenge by WIP Challenge
 - [ ] Add Mutations
-  - [ ] Add Challenges
+  - [X] Add Challenges
   - [ ] Add WIP Challenges
   - [ ] Move WIP Challenges
   - [ ] Delete Challenges
