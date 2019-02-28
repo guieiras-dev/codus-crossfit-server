@@ -21,6 +21,7 @@
     "@types/graphql-iso-date": "^3.3.1",
     "@types/lodash": "^4.14.121",
     "@types/node": "^11.9.4",
+    "tslint": "^5.13.0",
     "typescript": "^3.3.3"
   }
 }
