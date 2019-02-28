@@ -1,19 +1,3 @@
-import { connect } from '..';
-import { Connection } from 'typeorm';
+import runOnConnection, { AvailableOperations } from "./abstract/RunOnConnection";
 
-(async function migrate() {
-  let connection: Connection | undefined = undefined;
-
-  try {
-    connection = await connect();
-    await connection.undoLastMigration({ transaction: true });
-    await connection.close();
-
-    process.exit(0);
-  } catch (err) {
-    if (connection) await (connection as Connection).close();
-
-    console.error(err);
-    process.exit(1);
-  }
-})();
+runOnConnection(AvailableOperations.UNDO_LAST_MIGRATION);
