@@ -35,6 +35,4 @@ const schema = makeExecutableSchema({
   typeDefs,
 });
 
-addMockFunctionsToSchema({ schema, preserveResolvers: true });
-
 export default schema;
