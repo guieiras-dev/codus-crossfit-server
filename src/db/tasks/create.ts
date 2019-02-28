@@ -1,10 +1,10 @@
 import { Client } from 'pg';
-import { getOptionsFromEnvironment } from '../environment';
+import { getOptionsForEnvironment } from '../environment';
 import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
 
 (async function create() {
   try {
-    const options = await getOptionsFromEnvironment() as PostgresConnectionOptions;
+    const options = await getOptionsForEnvironment() as PostgresConnectionOptions;
 
     const { database, host, password, port, ssl, username, url } = options
     const client = new Client({

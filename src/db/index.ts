@@ -1,9 +1,7 @@
 import { Connection, ConnectionOptions, createConnection } from "typeorm";
-import environment, { getOptionsFromEnvironment } from "./environment"
+import { getOptionsForEnvironment } from "./environment"
 
-export async function connect(options: ConnectionOptions | Promise<ConnectionOptions> = getOptionsFromEnvironment()): Promise<Connection> {
+export async function connect(options: ConnectionOptions | Promise<ConnectionOptions> = getOptionsForEnvironment()): Promise<Connection> {
   const connectionOptions = await options;
   return createConnection(connectionOptions);
 }
-
-export const environments = environment;
