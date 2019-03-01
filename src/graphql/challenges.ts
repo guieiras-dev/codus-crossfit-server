@@ -22,19 +22,19 @@ const resolvers = {
     challenges: () => {
       return Challenge.find();
     },
-    challenge: async (_obj: any, { challengeId }: { challengeId: string }) => {
-      return Challenge.findOne({ id: parseInt(challengeId) });
-    }
+    challenge: async (obj: any, { challengeId }: { challengeId: string }) => {
+      return Challenge.findOne({ id: parseInt(challengeId, 10) });
+    },
   },
   Mutation: {
-    createChallenge: (_obj: any, { title, description }: { title: string, description: string }) => {
+    createChallenge: (obj: any, { title, description }: { title: string, description: string }) => {
       const challenge = Challenge.create();
       challenge.title = title;
       challenge.description = description;
 
       return challenge.save();
-    }
-  }
+    },
+  },
 };
 
 export { typeDefs, resolvers };
