@@ -1,15 +1,15 @@
-import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools';
-import { GraphQLDateTime } from 'graphql-iso-date';
-import merge from 'lodash/merge';
+import { GraphQLDateTime } from "graphql-iso-date";
+import { addMockFunctionsToSchema, makeExecutableSchema } from "graphql-tools";
+import merge from "lodash/merge";
 
 import {
+  resolvers as challengeResolvers,
   typeDefs as Challenges,
-  resolvers as challengeResolvers
 } from "./challenges";
 
 import {
-  typeDefs as WipChallenges,
   resolvers as wipChallengeResolvers,
+  typeDefs as WipChallenges,
 } from "./wip_challenges";
 
 const defaultTypeDefs = `
@@ -27,8 +27,8 @@ const defaultResolvers = {
 const typeDefs = [defaultTypeDefs, Challenges, WipChallenges];
 
 const schema = makeExecutableSchema({
+  resolvers: merge(defaultResolvers, challengeResolvers, wipChallengeResolvers),
   typeDefs,
-  resolvers: merge(defaultResolvers, challengeResolvers, wipChallengeResolvers)
 });
 
 addMockFunctionsToSchema({ schema, preserveResolvers: true });

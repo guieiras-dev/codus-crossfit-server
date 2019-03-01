@@ -23,8 +23,8 @@ extend type Query {
 `;
 const resolvers = {
   Query: {
-    wipChallenges: (_obj: any, _args: any) => WipChallenge.find()
-  }
+    wipChallenges: () => WipChallenge.find(),
+  },
 };
 
 export { typeDefs, resolvers };
