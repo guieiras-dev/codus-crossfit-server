@@ -15,7 +15,7 @@ extend type Query {
 `;
 const resolvers = {
   Query: {
-    challenges: (_obj: any, _args: any) => {
+    challenges: () => {
       return Challenge.find();
     },
   },
