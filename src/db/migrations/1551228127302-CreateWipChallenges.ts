@@ -1,4 +1,4 @@
-import {MigrationInterface, QueryRunner, Table} from "typeorm";
+import {MigrationInterface, QueryRunner, Table, TableForeignKey} from "typeorm";
 import Challenge from "../../entities/challenge";
 import { ChallengeStatus } from "../../entities/wip_challenge";
 
@@ -11,15 +11,22 @@ export class CreateWipChallenges1551228127302 implements MigrationInterface {
         { name: "id", type: "int", isPrimary: true, isGenerated: true },
         { name: "user_email", type: "character varying" },
         { name: "status", type: "enum", enum: Object.values(ChallengeStatus) },
-        
+        { name: "challenge_id", type: "int" },
         { name: "created_at", type: "timestamp without time zone" },
         { name: "updated_at", type: "timestamp without time zone" }
       ]
-    }), true)
+    }), true);
+
+    await queryRunner.createForeignKey("wip_challenges", new TableForeignKey({
+      columnNames: ["challenge_id"],
+      referencedColumnNames: ["id"],
+      referencedTableName: "challenges",
+      onDelete: "CASCADE"
+    }));
   }
 
   public async down(queryRunner: QueryRunner): Promise<any> {
-    await queryRunner.dropTable("challenges")
+    await queryRunner.dropTable("wip_challenges");
   }
 
 }
