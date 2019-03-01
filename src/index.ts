@@ -2,8 +2,8 @@
 import { GraphQLServer } from "graphql-yoga";
 import "reflect-metadata";
 
-import { connect } from './db';
-import schema from './graphql'
+import { connect } from "./db";
+import schema from "./graphql";
 
 const server = new GraphQLServer({ schema });
 

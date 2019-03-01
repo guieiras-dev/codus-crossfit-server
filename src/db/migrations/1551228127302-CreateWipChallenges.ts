@@ -13,15 +13,15 @@ export class CreateWipChallenges1551228127302 implements MigrationInterface {
         { name: "status", type: "enum", enum: Object.values(ChallengeStatus) },
         { name: "challenge_id", type: "int" },
         { name: "created_at", type: "timestamp without time zone" },
-        { name: "updated_at", type: "timestamp without time zone" }
-      ]
+        { name: "updated_at", type: "timestamp without time zone" },
+      ],
     }), true);
 
     await queryRunner.createForeignKey("wip_challenges", new TableForeignKey({
       columnNames: ["challenge_id"],
+      onDelete: "CASCADE",
       referencedColumnNames: ["id"],
       referencedTableName: "challenges",
-      onDelete: "CASCADE"
     }));
   }
 

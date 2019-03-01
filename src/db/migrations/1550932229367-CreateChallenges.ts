@@ -10,13 +10,13 @@ export class CreateChallenges1550932229367 implements MigrationInterface {
         { name: "title", type: "character varying" },
         { name: "description", type: "text", isNullable: true },
         { name: "created_at", type: "timestamp without time zone" },
-        { name: "updated_at", type: "timestamp without time zone" }
-      ]
-    }), true)
+        { name: "updated_at", type: "timestamp without time zone" },
+      ],
+    }), true);
   }
 
   public async down(queryRunner: QueryRunner): Promise<any> {
-    await queryRunner.dropTable("challenges")
+    await queryRunner.dropTable("challenges");
   }
 
 }

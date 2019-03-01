@@ -1,17 +1,18 @@
-import { Client } from 'pg';
-import { getOptionsForEnvironment } from '../../environment';
-import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
+/* tslint:disable no-console */
+import { Client } from "pg";
+import { PostgresConnectionOptions } from "typeorm/driver/postgres/PostgresConnectionOptions";
+import { getOptionsForEnvironment } from "../../environment";
 
 export enum AvailableOperations {
   CREATE = "CREATE",
   DROP = "DROP",
-};
+}
 
 export default async function runOnClient(operation: AvailableOperations) {
   try {
     const options = await getOptionsForEnvironment() as PostgresConnectionOptions;
 
-    const { database, host, password, port, ssl, username, url } = options
+    const { database, host, password, port, ssl, username, url } = options;
     const client = new Client({
       connectionString: url,
       database: username,
@@ -19,7 +20,7 @@ export default async function runOnClient(operation: AvailableOperations) {
       password,
       port,
       ssl,
-      user: username
+      user: username,
     });
 
     await client.connect();
