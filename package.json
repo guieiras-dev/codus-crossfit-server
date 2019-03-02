@@ -4,12 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "npm run build && node dist/index.js",
+    "start": "yarn build && node dist/index.js",
     "build": "tsc",
-    "db:create": "node dist/db/tasks/create.js",
-    "db:drop": "node dist/db/tasks/drop.js",
-    "db:migrate": "node dist/db/tasks/migrate.js",
-    "db:rollback": "node dist/db/tasks/rollback.js",
+    "db:create": "yarn build && node dist/db/tasks/create.js",
+    "db:drop": "yarn build && node dist/db/tasks/drop.js",
+    "db:migrate": "yarn build && node dist/db/tasks/migrate.js",
+    "db:rollback": "yarn build && node dist/db/tasks/rollback.js",
     "lint": "tslint --project ./",
     "lint:fix": "yarn lint -- --fix"
   },
