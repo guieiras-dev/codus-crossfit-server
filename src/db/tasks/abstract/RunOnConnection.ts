@@ -3,8 +3,8 @@ import { Connection } from "typeorm";
 import { connect } from "../..";
 
 export enum AvailableOperations {
-  RUN_MIGRATIONS = "runMigrations",
-  UNDO_LAST_MIGRATION = "undoLastMigration",
+  MIGRATE = "runMigrations",
+  ROLLBACK = "undoLastMigration",
 }
 
 export default async function runOnConnection(operation: AvailableOperations) {

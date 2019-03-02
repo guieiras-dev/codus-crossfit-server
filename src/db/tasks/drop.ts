@@ -1,3 +1,3 @@
 import runOnConnection, { AvailableOperations } from "./abstract/RunOnClient";
 
-runOnConnection(AvailableOperations.DROP);
+runOnConnection(AvailableOperations.DROP_DB);

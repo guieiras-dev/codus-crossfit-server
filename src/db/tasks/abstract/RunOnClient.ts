@@ -4,8 +4,8 @@ import { PostgresConnectionOptions } from "typeorm/driver/postgres/PostgresConne
 import { getOptionsForEnvironment } from "../../environment";
 
 export enum AvailableOperations {
-  CREATE = "CREATE",
-  DROP = "DROP",
+  CREATE_DB = "CREATE",
+  DROP_DB = "DROP",
 }
 
 export default async function runOnClient(operation: AvailableOperations) {
