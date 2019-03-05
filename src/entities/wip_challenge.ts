@@ -10,7 +10,7 @@ import {
 } from "typeorm";
 import Challenge from "./challenge";
 
-enum ChallengeStatus {
+export enum ChallengeStatus {
   TODO = "todo",
   DOING = "doing",
   DONE = "done",

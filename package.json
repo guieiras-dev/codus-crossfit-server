@@ -4,8 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "npm run build && node dist/index.js",
+    "start": "yarn build && node dist/index.js",
     "build": "tsc",
+    "db:create": "yarn build && node dist/db/tasks/create.js",
+    "db:drop": "yarn build && node dist/db/tasks/drop.js",
+    "db:migrate": "yarn build && node dist/db/tasks/migrate.js",
+    "db:rollback": "yarn build && node dist/db/tasks/rollback.js",
     "lint": "tslint --project ./",
     "lint:fix": "yarn lint -- --fix"
   },
@@ -23,6 +27,7 @@
     "@types/graphql-iso-date": "^3.3.1",
     "@types/lodash": "^4.14.121",
     "@types/node": "^11.9.4",
+    "@types/pg": "^7.4.13",
     "tslint": "^5.13.0",
     "typescript": "^3.3.3"
   }
