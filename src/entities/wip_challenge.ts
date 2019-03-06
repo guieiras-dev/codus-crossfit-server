@@ -11,9 +11,9 @@ import {
 import Challenge from "./challenge";
 
 export enum ChallengeStatus {
-  TODO = "todo",
-  DOING = "doing",
-  DONE = "done",
+  TODO = "TODO",
+  DOING = "DOING",
+  DONE = "DONE",
 }
 
 @Entity("wip_challenges")
