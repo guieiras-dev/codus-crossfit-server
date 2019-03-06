@@ -26,6 +26,7 @@ extend type Query {
 extend type Mutation {
   createWipChallenge(userEmail: String!, challengeId: ID!): WipChallenge!
   moveWipChallenge(id: ID!, newStatus: ChallengeStatus): WipChallenge
+  deleteWipChallenge(id: ID!): WipChallenge
 }
 `;
 const resolvers = {
@@ -49,6 +50,18 @@ const resolvers = {
         const wipChallenge = await WipChallenge.findOneOrFail({ id: parseInt(id, 10) });
         wipChallenge.status = newStatus;
         return wipChallenge.save();
+      } catch (error) {
+        throw new GraphQLError("WIP Challenge not found");
+      }
+    },
+    deleteWipChallenge: async (obj: any, { id }: { id: string }) => {
+      try {
+        const wipChallenge = await WipChallenge.findOneOrFail({ id: parseInt(id, 10) });
+        const wipChallengeCopy = { ...wipChallenge };
+
+        await WipChallenge.remove(wipChallenge);
+
+        return wipChallengeCopy;
       } catch (error) {
         throw new GraphQLError("WIP Challenge not found");
       }

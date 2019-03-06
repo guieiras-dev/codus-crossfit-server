@@ -26,7 +26,7 @@
   - [X] Add WIP Challenges
   - [X] Move WIP Challenges
   - [ ] Delete Challenges
-  - [ ] Delete WIP Challenges
+  - [X] Delete WIP Challenges
 - [ ] Good Stuff
   - [ ] Authentication
   - [ ] Authorization
