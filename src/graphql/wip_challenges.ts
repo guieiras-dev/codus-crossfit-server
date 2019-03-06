@@ -19,11 +19,15 @@ type WipChallenge {
 
 extend type Query {
   wipChallenges: [WipChallenge]!
+  wipChallenge(id: ID!): WipChallenge
 }
 `;
 const resolvers = {
   Query: {
     wipChallenges: () => WipChallenge.find(),
+    wipChallenge: async (obj: any, { id }: { id: string }) => {
+      return WipChallenge.findOne({ id: parseInt(id, 10) });
+    },
   },
 };
 
