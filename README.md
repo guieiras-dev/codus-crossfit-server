@@ -24,7 +24,7 @@
 - [ ] Add Mutations
   - [X] Add Challenges
   - [X] Add WIP Challenges
-  - [ ] Move WIP Challenges
+  - [X] Move WIP Challenges
   - [ ] Delete Challenges
   - [ ] Delete WIP Challenges
 - [ ] Good Stuff

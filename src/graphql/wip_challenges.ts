@@ -1,3 +1,4 @@
+import { GraphQLError } from "graphql";
 import WipChallenge, { ChallengeStatus } from "../entities/wip_challenge";
 
 const typeDefs = `
@@ -24,6 +25,7 @@ extend type Query {
 
 extend type Mutation {
   createWipChallenge(userEmail: String!, challengeId: ID!): WipChallenge!
+  moveWipChallenge(id: ID!, newStatus: ChallengeStatus): WipChallenge
 }
 `;
 const resolvers = {
@@ -35,12 +37,21 @@ const resolvers = {
   },
   Mutation: {
     createWipChallenge: (obj: any, { userEmail, challengeId }: WipChallenge) => {
-    const wipChallenge = WipChallenge.create();
-    wipChallenge.userEmail = userEmail;
-    wipChallenge.challengeId = challengeId;
-    wipChallenge.status = ChallengeStatus.TODO;
+      const wipChallenge = WipChallenge.create();
+      wipChallenge.userEmail = userEmail;
+      wipChallenge.challengeId = challengeId;
+      wipChallenge.status = ChallengeStatus.TODO;
 
-    return wipChallenge.save();
+      return wipChallenge.save();
+    },
+    moveWipChallenge: async (obj: any, { id, newStatus }: { id: string, newStatus: ChallengeStatus }) => {
+      try {
+        const wipChallenge = await WipChallenge.findOneOrFail({ id: parseInt(id, 10) });
+        wipChallenge.status = newStatus;
+        return wipChallenge.save();
+      } catch (error) {
+        throw new GraphQLError("WIP Challenge not found");
+      }
     },
   },
 };
