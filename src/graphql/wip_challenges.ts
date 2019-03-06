@@ -1,7 +1,7 @@
 import WipChallenge, { ChallengeStatus } from "../entities/wip_challenge";
 
 const typeDefs = `
-enum ChallengeProgress {
+enum ChallengeStatus {
   TODO
   DOING
   DONE
@@ -10,7 +10,7 @@ enum ChallengeProgress {
 type WipChallenge {
   id: ID!
   userEmail: String!
-  status: ChallengeProgress!
+  status: ChallengeStatus!
   createdAt: DateTime!
   updatedAt: DateTime!
   challengeId: ID!
