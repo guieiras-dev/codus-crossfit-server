@@ -21,12 +21,12 @@
   - [X] WIP Challenges
   - [X] WIP Challenges By Id
   - [X] Challenge by WIP Challenge
-- [ ] Add Mutations
+- [X] Add Mutations
   - [X] Add Challenges
   - [X] Add WIP Challenges
-  - [ ] Move WIP Challenges
-  - [ ] Delete Challenges
-  - [ ] Delete WIP Challenges
+  - [X] Move WIP Challenges
+  - [X] Delete Challenges
+  - [X] Delete WIP Challenges
 - [ ] Good Stuff
   - [ ] Authentication
   - [ ] Authorization
