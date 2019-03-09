@@ -10,7 +10,7 @@ export class CreateWipChallenges1551228127302 implements MigrationInterface {
       columns: [
         { name: "id", type: "int", isPrimary: true, isGenerated: true },
         { name: "user_email", type: "character varying" },
-        { name: "status", type: "enum", enum: Object.values(ChallengeStatus) },
+        { name: "status", type: "enum", enum: ["TODO", "DOING", "DONE"] },
         { name: "challenge_id", type: "int" },
         { name: "created_at", type: "timestamp without time zone" },
         { name: "updated_at", type: "timestamp without time zone" },
