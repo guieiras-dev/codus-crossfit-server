@@ -38,12 +38,11 @@ const resolvers = {
   },
   Mutation: {
     createWipChallenge: (obj: any, { userEmail, challengeId }: WipChallenge) => {
-      const wipChallenge = WipChallenge.create();
-      wipChallenge.userEmail = userEmail;
-      wipChallenge.challengeId = challengeId;
-      wipChallenge.status = ChallengeStatus.TODO;
-
-      return wipChallenge.save();
+      return WipChallenge.create({
+        userEmail,
+        challengeId,
+        status: ChallengeStatus.TODO,
+      }).save();
     },
     moveWipChallenge: async (obj: any, { id, newStatus }: { id: string, newStatus: ChallengeStatus }) => {
       try {
