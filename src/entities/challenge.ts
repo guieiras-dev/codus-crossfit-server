@@ -1,4 +1,11 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {
+  BaseEntity,
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from "typeorm";
 
 @Entity("challenges")
 export default class Challenge extends BaseEntity {
@@ -11,9 +18,9 @@ export default class Challenge extends BaseEntity {
   @Column({ type: "text", nullable: true })
   public description!: string;
 
-  @Column({ name: "created_at", type: "timestamp with time zone" })
+  @CreateDateColumn({ name: "created_at", type: "timestamp with time zone" })
   public createdAt!: Date;
 
-  @Column({ name: "updated_at", type: "timestamp with time zone" })
+  @UpdateDateColumn({ name: "updated_at", type: "timestamp with time zone" })
   public updatedAt!: Date;
 }

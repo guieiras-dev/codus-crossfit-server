@@ -18,6 +18,10 @@ scalar DateTime
 type Query {
   _empty: String
 }
+
+type Mutation {
+  _empty: String
+}
 `;
 
 const defaultResolvers = {
@@ -30,7 +34,5 @@ const schema = makeExecutableSchema({
   resolvers: merge(defaultResolvers, challengeResolvers, wipChallengeResolvers),
   typeDefs,
 });
-
-addMockFunctionsToSchema({ schema, preserveResolvers: true });
 
 export default schema;

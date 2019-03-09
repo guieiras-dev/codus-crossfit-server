@@ -17,12 +17,12 @@
     - [X] [Migrations](https://github.com/typeorm/typeorm/blob/master/docs/migrations.md)
 - [ ] Add Real Resolvers
   - [X] Challenges
-  - [ ] Challenge By Id
+  - [X] Challenge By Id
   - [X] WIP Challenges
   - [ ] WIP Challenges By Id
   - [X] Challenge by WIP Challenge
 - [ ] Add Mutations
-  - [ ] Add Challenges
+  - [X] Add Challenges
   - [ ] Add WIP Challenges
   - [ ] Move WIP Challenges
   - [ ] Delete Challenges
