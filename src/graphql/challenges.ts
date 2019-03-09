@@ -30,15 +30,11 @@ const resolvers = {
   },
   Mutation: {
     createChallenge: (obj: any, { title, description }: { title: string, description: string }) => {
-      const challenge = Challenge.create();
-      challenge.title = title;
-      challenge.description = description;
-
-      return challenge.save();
+      return Challenge.create({ title, description }).save();
     },
     deleteChallenge: async (obj: any, { id }: { id: string }) => {
       try {
-        const challenge = await Challenge.findOneOrFail({ id: parseInt(id, 10)});
+        const challenge = await Challenge.findOneOrFail({ id: parseInt(id, 10) });
         const challengeCopy = { ...challenge };
 
         await Challenge.remove(challenge);
