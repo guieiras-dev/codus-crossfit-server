@@ -11,7 +11,7 @@ type Challenge {
 
 extend type Query {
   challenges: [Challenge]!
-  challenge(challengeId: ID!): Challenge
+  challenge(id: ID!): Challenge
 }
 extend type Mutation {
   createChallenge(title: String!, description: String!): Challenge
@@ -22,8 +22,8 @@ const resolvers = {
     challenges: () => {
       return Challenge.find();
     },
-    challenge: async (obj: any, { challengeId }: { challengeId: string }) => {
-      return Challenge.findOne({ id: parseInt(challengeId, 10) });
+    challenge: async (obj: any, { id }: { id: string }) => {
+      return Challenge.findOne({ id: parseInt(id, 10) });
     },
   },
   Mutation: {

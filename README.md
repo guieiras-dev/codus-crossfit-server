@@ -15,15 +15,15 @@
     - [X] Challenge Entity
     - [X] WIP Challenge Entity
     - [X] [Migrations](https://github.com/typeorm/typeorm/blob/master/docs/migrations.md)
-- [ ] Add Real Resolvers
+- [X] Add Real Resolvers
   - [X] Challenges
   - [X] Challenge By Id
   - [X] WIP Challenges
-  - [ ] WIP Challenges By Id
+  - [X] WIP Challenges By Id
   - [X] Challenge by WIP Challenge
 - [ ] Add Mutations
   - [X] Add Challenges
-  - [ ] Add WIP Challenges
+  - [X] Add WIP Challenges
   - [ ] Move WIP Challenges
   - [ ] Delete Challenges
   - [ ] Delete WIP Challenges
