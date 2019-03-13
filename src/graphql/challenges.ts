@@ -16,9 +16,16 @@ extend type Query {
 }
 extend type Mutation {
   createChallenge(title: String!, description: String!): Challenge
+  updateChallenge(id: ID!, title: String, description: String): Challenge
   deleteChallenge(id: ID!): Challenge
 }
 `;
+interface IUpdateChallenge {
+  id: string;
+  title: string;
+  description: string;
+}
+
 const resolvers = {
   Query: {
     challenges: () => {
@@ -40,6 +47,16 @@ const resolvers = {
         await Challenge.remove(challenge);
 
         return challengeCopy;
+      } catch (error) {
+        throw new GraphQLError("Challenge not found");
+      }
+    },
+    updateChallenge: async (obj: any, { id, title, description }: IUpdateChallenge) => {
+      try {
+        const challenge = await Challenge.findOneOrFail({ id: parseInt(id, 10) });
+        const updatedChallenge = Challenge.merge(challenge, { title, description });
+
+        return updatedChallenge.save();
       } catch (error) {
         throw new GraphQLError("Challenge not found");
       }
