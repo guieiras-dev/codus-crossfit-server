@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "yarn build && node dist/index.js",
+    "start": "concurrently \"yarn build --watch\" \"nodemon dist/index.js\"",
     "build": "tsc",
     "db:create": "yarn build && node dist/db/tasks/create.js",
     "db:drop": "yarn build && node dist/db/tasks/drop.js",
@@ -28,6 +28,8 @@
     "@types/lodash": "^4.14.121",
     "@types/node": "^11.9.4",
     "@types/pg": "^7.4.13",
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.10",
     "tslint": "^5.13.0",
     "typescript": "^3.3.3"
   }

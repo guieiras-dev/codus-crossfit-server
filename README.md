@@ -29,7 +29,7 @@
   - [X] Move WIP Challenges
   - [X] Delete WIP Challenges
 - [ ] Good Stuff
-  - [ ] Hot Reloading
+  - [X] Hot Reloading
   - [ ] Authentication
   - [ ] Authorization
   - [ ] Subscriptions
