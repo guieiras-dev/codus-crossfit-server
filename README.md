@@ -23,11 +23,13 @@
   - [X] Challenge by WIP Challenge
 - [X] Add Mutations
   - [X] Add Challenges
+  - [X] Delete Challenges
+  - [X] Update Challenges
   - [X] Add WIP Challenges
   - [X] Move WIP Challenges
-  - [X] Delete Challenges
   - [X] Delete WIP Challenges
 - [ ] Good Stuff
+  - [ ] Hot Reloading
   - [ ] Authentication
   - [ ] Authorization
   - [ ] Subscriptions
