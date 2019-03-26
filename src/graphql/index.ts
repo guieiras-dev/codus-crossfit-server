@@ -1,5 +1,5 @@
 import { GraphQLDateTime } from "graphql-iso-date";
-import { addMockFunctionsToSchema, makeExecutableSchema } from "graphql-tools";
+import { makeExecutableSchema } from "graphql-tools";
 import merge from "lodash/merge";
 
 import {
