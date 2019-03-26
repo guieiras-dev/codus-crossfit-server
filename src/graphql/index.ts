@@ -12,6 +12,11 @@ import {
   typeDefs as WipChallenges,
 } from "./wip_challenges";
 
+import {
+  resolvers as loginResolvers,
+  typeDefs as Login,
+} from "./login";
+
 const defaultTypeDefs = `
 scalar DateTime
 
@@ -28,10 +33,15 @@ const defaultResolvers = {
   DateTime: GraphQLDateTime,
 };
 
-const typeDefs = [defaultTypeDefs, Challenges, WipChallenges];
+const typeDefs = [defaultTypeDefs, Challenges, WipChallenges, Login];
 
 const schema = makeExecutableSchema({
-  resolvers: merge(defaultResolvers, challengeResolvers, wipChallengeResolvers),
+  resolvers: merge(
+    defaultResolvers,
+    challengeResolvers,
+    wipChallengeResolvers,
+    loginResolvers,
+  ),
   typeDefs,
 });
 

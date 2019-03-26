@@ -31,6 +31,13 @@
 - [ ] Good Stuff
   - [X] Hot Reloading
   - [ ] Authentication
+    - [ ] Login mutation
+      - [X] Mocked Verification
+      - [ ] Password Verification
+    - [ ] Persist user data
+      - [ ] Generate migration
+      - [ ] Create User entity
+      - [ ] Save encrypted password
   - [ ] Authorization
   - [ ] Subscriptions
 
