@@ -30,14 +30,14 @@
   - [X] Delete WIP Challenges
 - [ ] Good Stuff
   - [X] Hot Reloading
-  - [ ] Authentication
-    - [ ] Login mutation
+  - [X] Authentication
+    - [X] SignIn mutation
       - [X] Mocked Verification
-      - [ ] Password Verification
-    - [ ] Persist user data
-      - [ ] Generate migration
-      - [ ] Create User entity
-      - [ ] Save encrypted password
+      - [X] Password Verification
+    - [X] SignUp mutation
+      - [X] Generate migration
+      - [X] Create User entity
+      - [X] Save encrypted password
   - [ ] Authorization
   - [ ] Subscriptions
 
