@@ -47,4 +47,8 @@ export default class User extends BaseEntity {
   public validPassword(password: string): Promise<boolean> {
     return bcrypt.compare(password, this.encryptedPassword);
   }
+
+  public hasRoles(roles: UserRoles[]): boolean {
+    return roles.every((role) => this.roles.includes(role));
+  }
 }

@@ -17,6 +17,8 @@ import {
   typeDefs as Auth,
 } from "./auth";
 
+import { AuthDirective, authDirectiveDeclaration } from "./directives/auth";
+
 const defaultTypeDefs = `
 scalar DateTime
 
@@ -33,7 +35,13 @@ const defaultResolvers = {
   DateTime: GraphQLDateTime,
 };
 
-const typeDefs = [defaultTypeDefs, Challenges, WipChallenges, Auth];
+const typeDefs = [
+  defaultTypeDefs,
+  authDirectiveDeclaration,
+  Challenges,
+  WipChallenges,
+  Auth,
+];
 
 const schema = makeExecutableSchema({
   resolvers: merge(
@@ -43,6 +51,9 @@ const schema = makeExecutableSchema({
     authResolvers,
   ),
   typeDefs,
+  schemaDirectives: {
+    admin: AuthDirective,
+  },
 });
 
 export default schema;

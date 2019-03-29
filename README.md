@@ -38,6 +38,7 @@
       - [X] Generate migration
       - [X] Create User entity
       - [X] Save encrypted password
+    - [X] Disallow normal users to execute Challenge mutations
   - [ ] Authorization
   - [ ] Subscriptions
 
