@@ -8,7 +8,7 @@ export enum AvailableOperations {
 }
 
 export default async function runOnConnection(operation: AvailableOperations) {
-  let connection: Connection | undefined;
+  let connection: Maybe<Connection>;
 
   try {
     connection = await connect();
