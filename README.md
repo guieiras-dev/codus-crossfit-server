@@ -29,8 +29,16 @@
   - [X] Move WIP Challenges
   - [X] Delete WIP Challenges
 - [ ] Good Stuff
-  - [ ] Hot Reloading
-  - [ ] Authentication
+  - [X] Hot Reloading
+  - [X] Authentication
+    - [X] SignIn mutation
+      - [X] Mocked Verification
+      - [X] Password Verification
+    - [X] SignUp mutation
+      - [X] Generate migration
+      - [X] Create User entity
+      - [X] Save encrypted password
+    - [X] Disallow normal users to execute Challenge mutations
   - [ ] Authorization
   - [ ] Subscriptions
 

@@ -1,14 +1,11 @@
-/* tslint:disable no-console */
-import { GraphQLServer } from "graphql-yoga";
-import "reflect-metadata";
-
+import configServer from "./config";
 import { connect } from "./db";
-import schema from "./graphql";
 
-const server = new GraphQLServer({ schema });
+const server = configServer();
 
 connect().then(() => {
   server.start(() => {
+    /* tslint:disable no-console */
     console.log("Server is running on http://localhost:4000");
   });
 });

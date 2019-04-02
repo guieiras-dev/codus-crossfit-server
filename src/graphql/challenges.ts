@@ -15,9 +15,9 @@ extend type Query {
   challenge(id: ID!): Challenge
 }
 extend type Mutation {
-  createChallenge(title: String!, description: String!): Challenge
-  updateChallenge(id: ID!, title: String, description: String): Challenge
-  deleteChallenge(id: ID!): Challenge
+  createChallenge(title: String!, description: String!): Challenge @admin
+  updateChallenge(id: ID!, title: String, description: String): Challenge @admin
+  deleteChallenge(id: ID!): Challenge @admin
 }
 `;
 interface IUpdateChallenge {

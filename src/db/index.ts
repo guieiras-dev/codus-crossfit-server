@@ -1,4 +1,6 @@
+import "reflect-metadata";
 import { Connection, ConnectionOptions, createConnection } from "typeorm";
+
 import { getOptionsForEnvironment } from "./environment";
 
 export async function connect(
