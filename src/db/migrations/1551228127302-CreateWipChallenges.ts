@@ -1,10 +1,8 @@
-import {MigrationInterface, QueryRunner, Table, TableForeignKey} from "typeorm";
-import Challenge from "../../entities/challenge";
-import { ChallengeStatus } from "../../entities/wip_challenge";
+import { MigrationInterface, QueryRunner, Table, TableForeignKey } from "typeorm";
 
 export class CreateWipChallenges1551228127302 implements MigrationInterface {
 
-  public async up(queryRunner: QueryRunner): Promise<any> {
+  public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(new Table({
       name: "wip_challenges",
       columns: [
@@ -25,7 +23,7 @@ export class CreateWipChallenges1551228127302 implements MigrationInterface {
     }));
   }
 
-  public async down(queryRunner: QueryRunner): Promise<any> {
+  public async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.dropTable("wip_challenges");
   }
 

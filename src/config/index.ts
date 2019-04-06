@@ -6,12 +6,20 @@ import { ExtractJwt, Strategy as JWTStrategy } from "passport-jwt";
 import User from "../entities/user";
 import schema from "../graphql";
 
+function ensureEnvVars() {
+  if (process.env.NODE_ENV !== "production") { require("dotenv").config(); }
+
+  if (!process.env.SECRET_KEY) {
+    throw new Error("ENV VAR SECREY_KEY must be set!");
+  }
+}
+
 export default function configServer() {
   ensureEnvVars();
 
   Passport.use(new JWTStrategy({
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-    secretOrKey: process.env.SECRET_KEY!,
+    secretOrKey: process.env.SECRET_KEY as string,
   }, async (jwtPayload, done) => {
     try {
       const user = await User.findOneOrFail({ id: jwtPayload.id });
@@ -25,12 +33,12 @@ export default function configServer() {
     schema,
     context: ({ request }) => {
       return {
-        secretKey: process.env.SECRET_KEY!,
+        secretKey: process.env.SECRET_KEY as string,
         user: request.user,
       };
     },
   });
-  server.use((req: Request, res: Response, next: NextFunction) => {
+  server.use(async (req: Request, res: Response, next: NextFunction) => {
     if (req.headers.authorization) {
       return Passport.authenticate("jwt", { session: false })(req, res, next);
     } else {
@@ -40,15 +48,4 @@ export default function configServer() {
   });
 
   return server;
-}
-
-function ensureEnvVars() {
-  if (process.env.NODE_ENV !== "production") {
-    // tslint:disable-next-line: no-var-requires
-    require("dotenv").config();
-  }
-
-  if (!process.env.SECRET_KEY) {
-    throw new Error("ENV VAR SECREY_KEY must be set!");
-  }
 }

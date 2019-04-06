@@ -25,7 +25,7 @@ export default async function runOnClient(operation: AvailableOperations) {
 
     await client.connect();
 
-    const escapedDbName = (database as string).replace(/\"/g, '""');
+    const escapedDbName = (database as string).replace(/\"/g, "\"\"");
     await client.query(`${operation} DATABASE "${escapedDbName}"`);
 
     await client.end();
