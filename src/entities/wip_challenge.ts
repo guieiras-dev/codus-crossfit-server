@@ -11,7 +11,6 @@ import {
 import Challenge from "./challenge";
 
 export enum ChallengeStatus {
-  TODO = "TODO",
   DOING = "DOING",
   DONE = "DONE",
 }

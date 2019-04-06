@@ -3,7 +3,6 @@ import WipChallenge, { ChallengeStatus } from "../entities/wip_challenge";
 
 const typeDefs = `
 enum ChallengeStatus {
-  TODO
   DOING
   DONE
 }
@@ -41,7 +40,7 @@ const resolvers = {
       return WipChallenge.create({
         userEmail,
         challengeId,
-        status: ChallengeStatus.TODO,
+        status: ChallengeStatus.DOING,
       }).save();
     },
     moveWipChallenge: async (obj: any, { id, newStatus }: { id: string; newStatus: ChallengeStatus }) => {
