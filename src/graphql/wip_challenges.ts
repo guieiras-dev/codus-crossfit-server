@@ -31,20 +31,20 @@ extend type Mutation {
 `;
 const resolvers = {
   Query: {
-    wipChallenges: () => WipChallenge.find(),
+    wipChallenges: async () => WipChallenge.find(),
     wipChallenge: async (obj: any, { id }: { id: string }) => {
       return WipChallenge.findOne({ id: parseInt(id, 10) });
     },
   },
   Mutation: {
-    createWipChallenge: (obj: any, { userEmail, challengeId }: WipChallenge) => {
+    createWipChallenge: async (obj: any, { userEmail, challengeId }: WipChallenge) => {
       return WipChallenge.create({
         userEmail,
         challengeId,
         status: ChallengeStatus.TODO,
       }).save();
     },
-    moveWipChallenge: async (obj: any, { id, newStatus }: { id: string, newStatus: ChallengeStatus }) => {
+    moveWipChallenge: async (obj: any, { id, newStatus }: { id: string; newStatus: ChallengeStatus }) => {
       try {
         const wipChallenge = await WipChallenge.findOneOrFail({ id: parseInt(id, 10) });
         wipChallenge.status = newStatus;

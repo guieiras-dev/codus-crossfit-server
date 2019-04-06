@@ -44,7 +44,7 @@ export default class User extends BaseEntity {
     this.encryptedPassword = await bcrypt.hash(password, saltRounds);
   }
 
-  public validPassword(password: string): Promise<boolean> {
+  public async validPassword(password: string): Promise<boolean> {
     return bcrypt.compare(password, this.encryptedPassword);
   }
 

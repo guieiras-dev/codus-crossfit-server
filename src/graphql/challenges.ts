@@ -28,7 +28,7 @@ interface IUpdateChallenge {
 
 const resolvers = {
   Query: {
-    challenges: () => {
+    challenges: async () => {
       return Challenge.find();
     },
     challenge: async (obj: any, { id }: { id: string }) => {
@@ -36,7 +36,7 @@ const resolvers = {
     },
   },
   Mutation: {
-    createChallenge: (obj: any, { title, description }: { title: string, description: string }) => {
+    createChallenge: async (obj: any, { title, description }: { title: string; description: string }) => {
       return Challenge.create({ title, description }).save();
     },
     deleteChallenge: async (obj: any, { id }: { id: string }) => {
