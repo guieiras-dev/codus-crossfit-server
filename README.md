@@ -1,5 +1,7 @@
 # Codus Crossfit Server
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/guieiras/codus-crossfit-server.svg)](https://greenkeeper.io/)
+
 ## Roadmap
 
 - [X] Setup Typescript
