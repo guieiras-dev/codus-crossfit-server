@@ -40,7 +40,6 @@
     "concurrently": "^4.1.0",
     "dotenv": "^7.0.0",
     "nodemon": "^1.18.10",
-    "tslint": "^5.13.0",
     "typescript": "^3.3.3"
   }
 }
