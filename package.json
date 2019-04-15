@@ -6,7 +6,6 @@
   "scripts": {
     "start": "concurrently \"yarn build --watch\" \"nodemon dist/index.js\"",
     "build": "tsc",
-    "postinstall": "yarn build",
     "db:create": "yarn build && node dist/db/tasks/create.js",
     "db:drop": "yarn build && node dist/db/tasks/drop.js",
     "db:migrate": "yarn build && node dist/db/tasks/migrate.js",
