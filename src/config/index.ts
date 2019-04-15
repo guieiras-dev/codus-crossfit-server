@@ -10,7 +10,7 @@ function ensureEnvVars() {
   if (process.env.NODE_ENV !== "production") { require("dotenv").config(); }
 
   if (!process.env.SECRET_KEY) {
-    throw new Error("ENV VAR SECREY_KEY must be set!");
+    throw new Error("ENV VAR SECRET_KEY must be set!");
   }
 }
 
