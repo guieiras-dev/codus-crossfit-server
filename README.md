@@ -4,6 +4,8 @@
 
 ## Roadmap
 
+### v0.1
+
 - [X] Setup Typescript
 - [X] Setup GraphQL-Yoga
 - [X] Define Schema
@@ -13,10 +15,10 @@
       - [Custom Scalars](https://www.apollographql.com/docs/apollo-server/v2/features/scalars-enums.html)
   - [X] Expose WIP Challenge type
 - [X] Setup ORM
-    - [X] Basic configuration
-    - [X] Challenge Entity
-    - [X] WIP Challenge Entity
-    - [X] [Migrations](https://github.com/typeorm/typeorm/blob/master/docs/migrations.md)
+  - [X] Basic configuration
+  - [X] Challenge Entity
+  - [X] WIP Challenge Entity
+  - [X] [Migrations](https://github.com/typeorm/typeorm/blob/master/docs/migrations.md)
 - [X] Add Real Resolvers
   - [X] Challenges
   - [X] Challenge By Id
@@ -30,7 +32,7 @@
   - [X] Add WIP Challenges
   - [X] Move WIP Challenges
   - [X] Delete WIP Challenges
-- [ ] Good Stuff
+- [X] Good Stuff
   - [X] Hot Reloading
   - [X] Authentication
     - [X] SignIn mutation
@@ -41,8 +43,13 @@
       - [X] Create User entity
       - [X] Save encrypted password
     - [X] Disallow normal users to execute Challenge mutations
+
+### v0.2
+
+- [ ] Deploy using `now`
+- [ ] Common User login
   - [ ] Authorization
-  - [ ] Subscriptions
+- [ ] Subscriptions
 
 ---
 
@@ -66,6 +73,6 @@
 
 You can export Postgraphile GraphQL schema using following command:
 
-```
+```bash
 docker run -p 5000:5000 -v "PATH_TO_HOST:/host" --network crossfit graphile/postgraphile --connection postgres://postgres:password@crossfit_db:5432/crossfit --schema public --export-schema-graphql="/host/schema.gql"
 ```
