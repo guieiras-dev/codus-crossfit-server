@@ -2,6 +2,8 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/guieiras/codus-crossfit-server.svg)](https://greenkeeper.io/)
 
+See also: [codus-crossfit-client](https://github.com/emilianoLeite/codus-crossfit-client)
+
 ## Roadmap
 
 ### v0.1
@@ -52,6 +54,17 @@
 - [ ] Subscriptions
 
 ---
+
+## Development
+- Before starting the server, setup the project:
+```bash
+yarn setup
+```
+
+- Then run:
+```bash
+yarn start
+```
 
 ## Simple GraphQL Server with Postgraphile and Docker
 
