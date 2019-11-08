@@ -32,7 +32,7 @@
     "@types/dotenv": "^6.1.0",
     "@types/graphql-iso-date": "^3.3.1",
     "@types/jsonwebtoken": "^8.3.2",
-    "@types/lodash": "^4.14.121",
+    "@types/lodash": "^4.14.146",
     "@types/node": "^11.9.4",
     "@types/passport": "^1.0.0",
     "@types/passport-jwt": "^3.0.1",
