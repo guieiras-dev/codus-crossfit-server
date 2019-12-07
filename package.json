@@ -27,7 +27,7 @@
     "typeorm": "^0.2.13"
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.19",
+    "@types/aws-lambda": "^8.10.37",
     "@types/bcrypt": "^3.0.0",
     "@types/dotenv": "^6.1.0",
     "@types/graphql-iso-date": "^3.3.1",
